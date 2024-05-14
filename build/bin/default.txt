@@ -1,0 +1,83 @@
+901;Panasonic DVD Player;45;128.99
+36789;iPhone Battery;120;35.99
+784;Sony Camcorder;125;395.99
+1231;Samsung TV;0;298.99
+7734;Apple iPhone 8;1200;599.98
+4567;HP Laptop;30;899.99
+3421;Canon DSLR Camera;20;699.99
+555;Bose Noise Cancelling Headphones;60;299.99
+9876;Dell Monitor;25;179.99
+2468;LG Microwave Oven;40;149.99
+1122;Logitech Wireless Mouse;100;19.99
+888;Amazon Kindle;80;119.99
+9999;Nintendo Switch;50;299.99
+777;Fitbit Charge 4;70;129.95
+654;Samsung Galaxy Tablet;35;249.99
+234;Sony PlayStation 5;10;499.99
+6789;Google Pixel 6;15;799.99
+111;Microsoft Surface Pro;25;899.99
+2222;JBL Bluetooth Speaker;90;99.99
+333;GoPro Hero 9;15;449.99
+456;Canon Printer;40;199.99
+567;Sony Noise Cancelling Earbuds;50;199.99
+987;Garmin GPS Watch;25;349.99
+876;Roku Streaming Stick;60;49.99
+789;Bose Soundbar 700;20;799.99
+543;Xbox Series X;10;499.99
+98765;Apple MacBook Pro;15;1999.99
+87654;Samsung 4K Curved TV;5;1499.99
+345;Nikon D850 DSLR;8;2999.99
+9012;LG Refrigerator;5;2499.99
+678;Canon EOS R5;15;3899.99
+54321;Sony Xperia 1 III;25;1299.99
+9876;HP Printer;10;129.99
+2345;Bose Home Speaker 500;30;299.99
+8765;Samsung Galaxy Watch 4;40;349.99
+4567;Fitbit Versa 3;20;229.95
+6789;DJI Mavic Air 2;15;799.99
+3456;Bose QuietComfort Earbuds;25;279.00
+9012;Sony A7R IV;8;3499.99
+6543;Nintendo Switch OLED Model;12;349.99
+7890;Apple Watch Series 7;20;399.00
+1234;Samsung Galaxy Buds Pro;35;199.99
+5678;Canon EOS R6;10;2499.00
+8901;GoPro Hero 10;8;499.99
+2345;Bose Frames Audio Sunglasses;15;199.99
+6789;Dell XPS 13;30;1299.99
+3456;LG OLED C1;5;2499.99
+9012;Apple AirPods Pro;50;249.00
+6789;Sony WH-1000XM4;20;348.00
+5432;Microsoft Xbox Series S;10;299.99
+8765;Samsung Odyssey G9;6;1499.99
+2345;Amazon Echo Show 15;8;249.99
+9012;Apple iPad Pro;25;999.00
+6789;Google Nest Audio;40;99.99
+3456;DJI Ronin 4D;5;6499.00
+1234;Sony Xperia 5 II;15;849.99
+5678;Garmin Forerunner 945;20;599.99
+8901;LG Gram Laptop;10;1299.99
+2345;Microsoft Surface Laptop 4;30;1299.00
+6789;Razer BlackWidow V3;15;139.99
+3456;Apple HomePod Mini;50;99.00
+9012;Samsung Odyssey G7;12;699.99
+6789;Jabra Elite 85t;25;179.99
+5432;Asus ROG Swift PG279Q;8;699.99
+8765;Logitech G Pro X Wireless;10;199.99
+2345;Apple TV 4K;15;179.00
+9012;Microsoft Xbox Elite Wireless Controller Series 2;20;179.99
+6789;Google Pixel Buds A-Series;30;99.00
+3456;Sony Alpha A6600;8;1398.00
+1234;Bose Sport Earbuds;25;179.00
+5678;Samsung Galaxy Tab S7+;12;849.99
+8901;Razer Blade 15;8;1799.99
+2345;Apple Magic Keyboard;20;299.00
+6789;Sony WF-1000XM4;15;278.00
+9012;Amazon Kindle Paperwhite;25;129.99
+6789;Samsung Odyssey G5;10;349.99
+3456;Google Nest Hub Max;8;229.00
+1234;Bose Portable Smart Speaker;20;349.00
+5678;Microsoft Surface Go 3;15;399.99
+8901;Razer DeathAdder V2;30;69.99
+2345;Sony XBR A8H;5;2299.99
+6789;JBL PartyBox 310;3;499.95
+9012;Apple Watch SE;25;279.00

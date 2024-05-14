@@ -1,9 +1,11 @@
 //============================================================================
 // Description:
 //============================================================================
-// File Name	: mian.cpp
+// File Name	: Assigment_2
 // Author		: Weihao Huang
-// Goal			: 
+// Goal			: Develop an inventory management system for an electronics store. 
+//                Implement a two-dimensional array that contains objects inherited 
+//				  from a base class, utilizing static_cast for type conversion.
 //============================================================================
 /*Copyright (c) 2024 Weihao Huang
 
@@ -18,8 +20,24 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
-//============================================================================
+//==========================================================================
 
+
+
+/*
+Can't use visual studio 2022. Always glitching.
+https://github.com/ClaypotRice111/Assignment_2.git
+
+folder tree
+──assigment_2
+	├── main.cpp
+	└── includes
+		├── product.h
+		├── product.cpp
+		├── system.h
+		└── system.cpp
+
+*/
 
 
 
@@ -34,8 +52,10 @@ using namespace std;
 
 
 int main(int argc, char* argv[]) {
-    
 
+    InventorySystem ManagementSystem("Seven");
+	ManagementSystem.Run();
+	
 	return 0;
 }
 

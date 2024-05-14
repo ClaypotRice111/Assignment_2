@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <conio.h>
 #include <fstream>
 #include "product.h"
 
@@ -37,6 +38,9 @@ public:
 	void Terminate();
 	//// discontinue a Product from Inventory. 
 	void Discontinue(int item_id);
+	////// add product
+	//bool AddStaff();
+	void Run();
 
 
 private:

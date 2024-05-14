@@ -22,8 +22,7 @@ InventorySystem::InventorySystem(string store_name) {
 	this->product_count = InventorySystem::DEFAULT_PRODUCT_COUNT;
 	this->product_list = new InventoryItem* [InventorySystem::DEFAULT_ARRAY_SIZE];
 	for (auto i = 0; i < InventorySystem::DEFAULT_ARRAY_SIZE; i++) {
-		*product_list = nullptr;
-		product_list++;
+		product_list[i] = nullptr;
 	}
 	BuildInventory();
 };
@@ -79,13 +78,13 @@ void InventorySystem::UpdateInventory() {
 	double totalCost = product->Cost(qty);
 	cout << "Total cost: $" << fixed << setprecision(2) << totalCost<< endl;
 
-	if (product->get_quantity() < qty) {
+	if (product->get_quantity() < qty) 
 		cout << "we have no more product, please wait for next time" << endl;
-	}else
+	else
 		product->set_quantity(product->get_quantity() - qty);
-	if (product->get_quantity() == 0) {
+
+	if (product->get_quantity() == 0) 
 		product->set_restocking(true);
-	}
 };
 
 void InventorySystem::Terminate() {
@@ -141,21 +140,17 @@ void InventorySystem::ReadFile(ifstream& File) {
 	product_count = 0; //reset count number is IMPORTANT, prevent be calling by furture update.
 
 	while (getline(File, buffer, ';')&&(product_count+1 < DEFAULT_ARRAY_SIZE)) {
-
 		id = stoi(buffer);
 
 		getline(File, buffer, ';');
 		name = buffer;
 
 		getline(File, buffer, ';');
-
 		qty = stoi(buffer);
-		if (qty == 0) {
+		if (qty == 0) 
 			restock = true;
-		}
-		else {
+		else 
 			restock = false;
-		}
 
 		getline(File, buffer, '\n');
 		price = stod(buffer.c_str());
@@ -176,5 +171,33 @@ void InventorySystem::WriteFile(fstream& File) {
 	}
 }
 
+void InventorySystem::Run(){
 
-
+	bool Loop = true;
+	while (Loop){
+		cout << "Enter your Option" <<endl;
+		cout << "1. Show Inventory" << endl;
+		cout << "2. Puchase Product" <<endl;
+		cout << "3. Save" <<endl;
+		cout << "4. Exit System" <<endl;
+		int option = getch();
+		switch (option)
+		{
+		case 49:
+			ShowInventory();
+			break;
+		case 50:
+			UpdateInventory();
+			break;
+		case 51:
+			Terminate();
+			break;
+		case 52:
+			Loop = false;
+			break;		
+		default:
+			cout << "please retype you option" << endl;
+			break;
+		}
+	}
+}
