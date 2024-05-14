@@ -1,5 +1,5 @@
 901;Panasonic DVD Player;45;128.99
-36789;iPhone Battery;120;35.99
+3679;iPhone Battery;120;35.99
 784;Sony Camcorder;125;395.99
 1231;Samsung TV;0;298.99
 7734;Apple iPhone 8;1200;599.98
@@ -29,7 +29,7 @@
 345;Nikon D850 DSLR;8;2999.99
 9012;LG Refrigerator;5;2499.99
 678;Canon EOS R5;15;3899.99
-54321;Sony Xperia 1 III;25;1299.99
+5431;Sony Xperia 1 III;25;1299.99
 9876;HP Printer;10;129.99
 2345;Bose Home Speaker 500;30;299.99
 8765;Samsung Galaxy Watch 4;40;349.99

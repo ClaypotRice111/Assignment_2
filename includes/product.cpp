@@ -30,7 +30,7 @@ void InventoryItem::Display() {
 
 void InventoryItem::DisplayRow() {
 	cout << setfill(' ') << setw(6) << (restocking ? "@@@" : " ");
-	cout << setfill('0') << setw(6) << right << item_id << setfill(' ') << "      ";
+	cout <<' ' <<setfill('0') << setw(4) << right << item_id << setfill(' ') << "       ";
 };
 
 void InventoryItem::set_item_id(int item_id) { 

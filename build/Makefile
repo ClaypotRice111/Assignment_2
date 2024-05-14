@@ -94,6 +94,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\lib\vscode\Assignment_2\build\CMakeFiles D:\lib\vscode\Assignment_2\build\\CMakeFiles\progress.marks
@@ -138,12 +183,140 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named basic_test
+
+# Build rule for target.
+basic_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 basic_test
+.PHONY : basic_test
+
+# fast build rule for target.
+basic_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/build
+.PHONY : basic_test/fast
+
+#=============================================================================
+# Target rules for targets named testB
+
+# Build rule for target.
+testB: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 testB
+.PHONY : testB
+
+# fast build rule for target.
+testB/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/build
+.PHONY : testB/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+_tests/_test_files/basic_test.obj: _tests/_test_files/basic_test.cpp.obj
+.PHONY : _tests/_test_files/basic_test.obj
+
+# target to build an object file
+_tests/_test_files/basic_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/_tests/_test_files/basic_test.cpp.obj
+.PHONY : _tests/_test_files/basic_test.cpp.obj
+
+_tests/_test_files/basic_test.i: _tests/_test_files/basic_test.cpp.i
+.PHONY : _tests/_test_files/basic_test.i
+
+# target to preprocess a source file
+_tests/_test_files/basic_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/_tests/_test_files/basic_test.cpp.i
+.PHONY : _tests/_test_files/basic_test.cpp.i
+
+_tests/_test_files/basic_test.s: _tests/_test_files/basic_test.cpp.s
+.PHONY : _tests/_test_files/basic_test.s
+
+# target to generate assembly for a file
+_tests/_test_files/basic_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/_tests/_test_files/basic_test.cpp.s
+.PHONY : _tests/_test_files/basic_test.cpp.s
+
+_tests/_test_files/testB.obj: _tests/_test_files/testB.cpp.obj
+.PHONY : _tests/_test_files/testB.obj
+
+# target to build an object file
+_tests/_test_files/testB.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/_tests/_test_files/testB.cpp.obj
+.PHONY : _tests/_test_files/testB.cpp.obj
+
+_tests/_test_files/testB.i: _tests/_test_files/testB.cpp.i
+.PHONY : _tests/_test_files/testB.i
+
+# target to preprocess a source file
+_tests/_test_files/testB.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/_tests/_test_files/testB.cpp.i
+.PHONY : _tests/_test_files/testB.cpp.i
+
+_tests/_test_files/testB.s: _tests/_test_files/testB.cpp.s
+.PHONY : _tests/_test_files/testB.s
+
+# target to generate assembly for a file
+_tests/_test_files/testB.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/_tests/_test_files/testB.cpp.s
+.PHONY : _tests/_test_files/testB.cpp.s
+
 includes/product.obj: includes/product.cpp.obj
 .PHONY : includes/product.obj
 
 # target to build an object file
 includes/product.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/includes/product.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/includes/product.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/includes/product.cpp.obj
 .PHONY : includes/product.cpp.obj
 
 includes/product.i: includes/product.cpp.i
@@ -152,6 +325,8 @@ includes/product.i: includes/product.cpp.i
 # target to preprocess a source file
 includes/product.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/includes/product.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/includes/product.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/includes/product.cpp.i
 .PHONY : includes/product.cpp.i
 
 includes/product.s: includes/product.cpp.s
@@ -160,6 +335,8 @@ includes/product.s: includes/product.cpp.s
 # target to generate assembly for a file
 includes/product.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/includes/product.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/includes/product.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/includes/product.cpp.s
 .PHONY : includes/product.cpp.s
 
 includes/system.obj: includes/system.cpp.obj
@@ -168,6 +345,8 @@ includes/system.obj: includes/system.cpp.obj
 # target to build an object file
 includes/system.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/includes/system.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/includes/system.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/includes/system.cpp.obj
 .PHONY : includes/system.cpp.obj
 
 includes/system.i: includes/system.cpp.i
@@ -176,6 +355,8 @@ includes/system.i: includes/system.cpp.i
 # target to preprocess a source file
 includes/system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/includes/system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/includes/system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/includes/system.cpp.i
 .PHONY : includes/system.cpp.i
 
 includes/system.s: includes/system.cpp.s
@@ -184,6 +365,8 @@ includes/system.s: includes/system.cpp.s
 # target to generate assembly for a file
 includes/system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/includes/system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\basic_test.dir\build.make CMakeFiles/basic_test.dir/includes/system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\testB.dir\build.make CMakeFiles/testB.dir/includes/system.cpp.s
 .PHONY : includes/system.cpp.s
 
 main.obj: main.cpp.obj
@@ -217,9 +400,25 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... test
+	@echo ... basic_test
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... main
+	@echo ... testB
+	@echo ... _tests/_test_files/basic_test.obj
+	@echo ... _tests/_test_files/basic_test.i
+	@echo ... _tests/_test_files/basic_test.s
+	@echo ... _tests/_test_files/testB.obj
+	@echo ... _tests/_test_files/testB.i
+	@echo ... _tests/_test_files/testB.s
 	@echo ... includes/product.obj
 	@echo ... includes/product.i
 	@echo ... includes/product.s

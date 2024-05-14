@@ -216,19 +216,19 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Assinment_2
+CMAKE_PROJECT_NAME:STATIC=assignment_2
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=1.10.0
+CMAKE_PROJECT_VERSION:STATIC=1.12.1
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=10
+CMAKE_PROJECT_VERSION_MINOR:STATIC=12
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=0
+CMAKE_PROJECT_VERSION_PATCH:STATIC=1
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_TWEAK:STATIC=
@@ -336,9 +336,22 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 //Enables UPDATE_DISCONNECTED behavior just for population of googletest
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 
+//Use Abseil and RE2. Requires Abseil and RE2 to be separately
+// added to the build.
+GTEST_HAS_ABSL:BOOL=OFF
+
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
+
+//Value Computed by CMake
+assignment_2_BINARY_DIR:STATIC=D:/lib/vscode/Assignment_2/build
+
+//Value Computed by CMake
+assignment_2_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+assignment_2_SOURCE_DIR:STATIC=D:/lib/vscode/Assignment_2
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=D:/lib/vscode/Assignment_2/build/_deps/googletest-build/googlemock
@@ -534,7 +547,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -607,6 +620,7 @@ _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;9;32;64;;cp311-win_amd64;;C:
 _Python_INTERPRETER_SIGNATURE:INTERNAL=148d406cd7c2a903fece0e2f73603043
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
+cmake_package_name:INTERNAL=GTest
 generated_dir:INTERNAL=D:/lib/vscode/Assignment_2/build/_deps/googletest-build/googletest/generated
 //ADVANCED property for variable: gmock_build_tests
 gmock_build_tests-ADVANCED:INTERNAL=1

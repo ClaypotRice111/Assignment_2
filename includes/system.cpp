@@ -65,6 +65,7 @@ void InventorySystem::UpdateInventory() {
 	cout << "Enter item ID: ";
 	cin >> id;
 
+	cout << id ;
 	InventoryItem* item = FindInventoryItem(id);
 	if (item == nullptr) {
 		cout << "Item not found." << endl;
@@ -99,7 +100,6 @@ void InventorySystem::Terminate() {
 };
 
 void InventorySystem::Discontinue(int item_id) {
-
 	InventoryItem* p_item = FindInventoryItem(item_id);
 	if (!p_item) {
 		return;
@@ -118,7 +118,7 @@ void InventorySystem::Discontinue(int item_id) {
 };
 
 InventoryItem* InventorySystem::FindInventoryItem(int item_id) {
-	for (int i = 0; i < DEFAULT_ARRAY_SIZE; i++) {
+	for (int i = 0; i < product_count; i++) {
 		if (product_list[i]->get_item_id() == item_id) {
 			return product_list[i];
 		}
@@ -175,28 +175,32 @@ void InventorySystem::Run(){
 
 	bool Loop = true;
 	while (Loop){
-		cout << "Enter your Option" <<endl;
+		cout << "Enter Option" <<endl;
 		cout << "1. Show Inventory" << endl;
 		cout << "2. Puchase Product" <<endl;
-		cout << "3. Save" <<endl;
-		cout << "4. Exit System" <<endl;
+		cout << "3. Reload Invetory" << endl;
+		cout << "4. Save" <<endl;
+		cout << "5. Exit System" <<endl;
 		int option = getch();
 		switch (option)
 		{
-		case 49:
+		case 49: // ascii code 49 = number 1
 			ShowInventory();
 			break;
 		case 50:
 			UpdateInventory();
 			break;
 		case 51:
-			Terminate();
+			BuildInventory();
 			break;
 		case 52:
+			Terminate();
+			break;
+		case 53:
 			Loop = false;
 			break;		
 		default:
-			cout << "please retype you option" << endl;
+			cout << "Please re-type your option" << endl;
 			break;
 		}
 	}

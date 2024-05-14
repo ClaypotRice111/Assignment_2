@@ -1,5 +1,5 @@
 //============================================================================
-// Description:
+// Description
 //============================================================================
 // File Name	: Assigment_2
 // Author		: Weihao Huang
@@ -37,9 +37,10 @@ folder tree
 		├── system.h
 		└── system.cpp
 
+your building path
+	├── main.exe
+	└── defualt.txt
 */
-
-
 
 
 
@@ -55,7 +56,7 @@ int main(int argc, char* argv[]) {
 
     InventorySystem ManagementSystem("Seven");
 	ManagementSystem.Run();
-	
+
 	return 0;
 }
 

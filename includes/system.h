@@ -12,7 +12,6 @@
 using namespace std;
 
 
-
 class  InventorySystem{
 public:
 	// Public static data
@@ -59,7 +58,6 @@ private:
 	void WriteFile(fstream& File);
 
 };
-
 
 #endif // SYSTEM_H
 
