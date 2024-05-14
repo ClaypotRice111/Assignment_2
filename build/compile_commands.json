@@ -1,0 +1,20 @@
+[
+{
+  "directory": "D:/lib/vscode/Assignment_2/build",
+  "command": "C:\\MinGW\\bin\\g++.exe    -fprofile-arcs -ftest-coverage -g -std=gnu++11 -o CMakeFiles\\main.dir\\main.cpp.obj -c D:\\lib\\vscode\\Assignment_2\\main.cpp",
+  "file": "D:/lib/vscode/Assignment_2/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.obj"
+},
+{
+  "directory": "D:/lib/vscode/Assignment_2/build",
+  "command": "C:\\MinGW\\bin\\g++.exe    -fprofile-arcs -ftest-coverage -g -std=gnu++11 -o CMakeFiles\\main.dir\\includes\\product.cpp.obj -c D:\\lib\\vscode\\Assignment_2\\includes\\product.cpp",
+  "file": "D:/lib/vscode/Assignment_2/includes/product.cpp",
+  "output": "CMakeFiles/main.dir/includes/product.cpp.obj"
+},
+{
+  "directory": "D:/lib/vscode/Assignment_2/build",
+  "command": "C:\\MinGW\\bin\\g++.exe    -fprofile-arcs -ftest-coverage -g -std=gnu++11 -o CMakeFiles\\main.dir\\includes\\system.cpp.obj -c D:\\lib\\vscode\\Assignment_2\\includes\\system.cpp",
+  "file": "D:/lib/vscode/Assignment_2/includes/system.cpp",
+  "output": "CMakeFiles/main.dir/includes/system.cpp.obj"
+}
+]
