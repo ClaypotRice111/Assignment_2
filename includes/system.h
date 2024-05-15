@@ -36,7 +36,7 @@ public:
 	//// save current inventory to a text file.
 	void Terminate();
 	//// discontinue a Product from Inventory. 
-	void Discontinue(int item_id);
+	void Discontinue();
 	////// add product
 	//bool AddStaff();
 	void Run();
@@ -58,6 +58,46 @@ private:
 	void WriteFile(fstream& File);
 
 };
+
+
+
+//=============================================================================================
+
+
+
+//=============================================================================================
+
+bool is_all_digital(const string value);
+
+bool is_a_number(const string value);
+
+bool is_a_word(const string value);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif // SYSTEM_H
 

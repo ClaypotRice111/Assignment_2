@@ -24,8 +24,8 @@
 876;Roku Streaming Stick;60;49.99
 789;Bose Soundbar 700;20;799.99
 543;Xbox Series X;10;499.99
-9765;Apple MacBook Pro;15;1999.99
-8654;Samsung 4K Curved TV;5;1499.99
+98765;Apple MacBook Pro;15;1999.99
+87654;Samsung 4K Curved TV;5;1499.99
 345;Nikon D850 DSLR;8;2999.99
 9012;LG Refrigerator;5;2499.99
 678;Canon EOS R5;15;3899.99

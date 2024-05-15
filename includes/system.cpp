@@ -80,13 +80,17 @@ void InventorySystem::UpdateInventory() {
 	cout << "Total cost: $" << fixed << setprecision(2) << totalCost<< endl;
 
 	if (product->get_quantity() < qty) 
-		cout << "we have no more product, please wait for next time" << endl;
+		cout << "We have no more product, need to restock" << endl;
 	else
 		product->set_quantity(product->get_quantity() - qty);
 
-	if (product->get_quantity() == 0) 
+	if (product->get_quantity() == 0) {
+		if (g_debug)
+			cout << "item id: " << id << " need to restock" << endl;
+
 		product->set_restocking(true);
 };
+	}
 
 void InventorySystem::Terminate() {
 	fstream OutFile(DEFAULT_OUTPUT_FILE_NAME + ".txt");
@@ -99,13 +103,17 @@ void InventorySystem::Terminate() {
 
 };
 
-void InventorySystem::Discontinue(int item_id) {
+void InventorySystem::Discontinue() {
+	int item_id;
+	cout << "Enter item ID: ";
+	cin >> item_id;
+
 	InventoryItem* p_item = FindInventoryItem(item_id);
 	if (!p_item) {
 		return;
 	}
 
-	for (auto i = 0; i < DEFAULT_ARRAY_SIZE; i++) {
+	for (auto i = 0; i < product_count; i++) {
 		if (product_list[i] == p_item) {
 			for (auto j = i; j < product_count -1; j++) {
 				product_list[j] = product_list[j +1];
@@ -113,6 +121,7 @@ void InventorySystem::Discontinue(int item_id) {
 			break;
 		}
 	}
+	delete[] p_item;
 	product_count--;
 	product_list[product_count] = nullptr;
 };
@@ -180,7 +189,8 @@ void InventorySystem::Run(){
 		cout << "2. Puchase Product" <<endl;
 		cout << "3. Reload Invetory" << endl;
 		cout << "4. Save" <<endl;
-		cout << "5. Exit System" <<endl;
+		cout << "5. Remove product" <<endl;
+		cout << "6. Exit System" <<endl;
 		int option = getch();
 		switch (option)
 		{
@@ -197,6 +207,9 @@ void InventorySystem::Run(){
 			Terminate();
 			break;
 		case 53:
+			Discontinue();
+			break;
+		case 54:
 			Loop = false;
 			break;		
 		default:
@@ -204,4 +217,39 @@ void InventorySystem::Run(){
 			break;
 		}
 	}
+}
+
+
+bool is_all_digital(const string value){
+	for(auto& letter: value ){
+		if (letter > 57 || letter < 48){
+			return false;
+		}
+	}
+	return true;
+}
+
+
+
+bool is_a_number(const string value){
+	for(auto& letter: value ){
+		if (letter > 57 || letter < 48){
+			return false;
+		}else{
+			if (letter != 46){
+				return false;
+			}else{
+				if (letter > 57 || letter < 48){
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
+
+
+bool is_a_word(const string value){
+	// it need a stata machine and get token function
+	return true;
 }

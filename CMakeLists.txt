@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5)
 project(assignment_2)
 
 
@@ -25,7 +25,11 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
+
+
 #. . . . . . . . . . . . . . . . . . . .
+cmake_policy(SET CMP0135 NEW)
+
 
 # ------------------------------------
 include(FetchContent)
@@ -37,11 +41,6 @@ FetchContent_Declare(
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-
-
- 
-
-
 
 # ------------------------------------
 enable_testing() 
@@ -62,7 +61,6 @@ ADD_EXECUTABLE(main
 )
 
 
-
 ADD_EXECUTABLE(basic_test
     _tests/_test_files/basic_test.cpp
     ${SOURCE_FILES}
@@ -74,7 +72,7 @@ ADD_EXECUTABLE(testB
 )
 
 # GoogleTest requires at least C++11
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 TARGET_LINK_LIBRARIES(basic_test gtest)
 TARGET_LINK_LIBRARIES(testB gtest)
