@@ -36,13 +36,13 @@ InventorySystem::~InventorySystem() {
 
 
 void InventorySystem::BuildInventory() {
-	ifstream InFile(DEFAULT_INPUT_FILE_NAME + ".txt");
-	if (!InFile) {
+	ifstream in_file(DEFAULT_INPUT_FILE_NAME + ".txt");
+	if (!in_file.is_open()) {
 		cout << "ERROR: Failed to open input file\n";
 		return;
 	}
-	ReadFile(InFile);
-	InFile.close();
+	ReadFile(in_file);
+	in_file.close();
 };
 
 void InventorySystem::ShowInventory() {
@@ -50,7 +50,7 @@ void InventorySystem::ShowInventory() {
 	cout << "------------------------------------------------------------------------" << endl;
 	cout << "       ID               Name                   Quantity   Price" << endl;
 	cout << "------------------------------------------------------------------------" << endl;
-	Product* p_product;
+	Product* p_product = nullptr;
 	for (auto i = 0; i < product_count; i++) {
 		p_product = static_cast<Product*>(product_list[i]);
 		p_product->DisplayRow();
@@ -60,51 +60,50 @@ void InventorySystem::ShowInventory() {
 };
 
 void InventorySystem::UpdateInventory() {
-	int id, qty;
+	int item_id = 0;
+	int number_of_purchase = 0;
 
 	cout << "Enter item ID: ";
-	cin >> id;
+	cin >> item_id;
 
-	cout << id ;
-	InventoryItem* item = FindInventoryItem(id);
+	InventoryItem* item = FindInventoryItem(item_id);
 	if (item == nullptr) {
 		cout << "Item not found." << endl;
 		return;
 	}
 
 	cout << "Enter quantity: ";
-	cin >> qty;
+	cin >> number_of_purchase;
 
 	Product* product = static_cast<Product*>(item);
-	double totalCost = product->Cost(qty);
+	double totalCost = product->Cost(number_of_purchase);
 	cout << "Total cost: $" << fixed << setprecision(2) << totalCost<< endl;
 
-	if (product->get_quantity() < qty) 
+	if (product->get_quantity() < number_of_purchase) 
 		cout << "We have no more product, need to restock" << endl;
 	else
-		product->set_quantity(product->get_quantity() - qty);
+		product->set_quantity(product->get_quantity() - number_of_purchase);
 
 	if (product->get_quantity() == 0) {
 		if (g_debug)
-			cout << "item id: " << id << " need to restock" << endl;
+			cout << "item id: " << item_id << " need to restock" << endl;
 
 		product->set_restocking(true);
-};
-	}
+	};
+}
 
 void InventorySystem::Terminate() {
-	fstream OutFile(DEFAULT_OUTPUT_FILE_NAME + ".txt");
-	if (!OutFile) {
+ofstream out_file(DEFAULT_OUTPUT_FILE_NAME + ".txt");
+	if (!out_file.is_open()) {
 		cout << "ERROR: Failed to open output file\n";
-	
+		out_file.open(DEFAULT_OUTPUT_FILE_NAME + ".txt");
 	}
-	WriteFile(OutFile);
-	OutFile.close();
-
+	WriteFile(out_file);
+	out_file.close();
 };
 
 void InventorySystem::Discontinue() {
-	int item_id;
+	int item_id = 0;
 	cout << "Enter item ID: ";
 	cin >> item_id;
 
@@ -121,8 +120,8 @@ void InventorySystem::Discontinue() {
 			break;
 		}
 	}
-	delete[] p_item;
 	product_count--;
+	delete p_item;
 	product_list[product_count] = nullptr;
 };
 
@@ -141,10 +140,10 @@ InventoryItem* InventorySystem::FindInventoryItem(int item_id) {
 void InventorySystem::ReadFile(ifstream& File) {
 	string buffer;
 	string name;
-	int id;
-	int qty;
-	double price;
-	bool restock;
+	int id = 0;
+	int qty = 0;
+	double price = 0 ;
+	bool restock_status = false;
 
 	product_count = 0; //reset count number is IMPORTANT, prevent be calling by furture update.
 
@@ -157,20 +156,20 @@ void InventorySystem::ReadFile(ifstream& File) {
 		getline(File, buffer, ';');
 		qty = stoi(buffer);
 		if (qty == 0) 
-			restock = true;
+			restock_status = true;
 		else 
-			restock = false;
+			restock_status = false;
 
 		getline(File, buffer, '\n');
 		price = stod(buffer.c_str());
 
-		product_list[product_count] = new Product(id, restock, name, qty, price);
+		product_list[product_count] = new Product(id, restock_status, name, qty, price);
 		product_count++;
 	}
 }
 
-void InventorySystem::WriteFile(fstream& File) {
-	Product* p_product;
+void InventorySystem::WriteFile(ofstream& File) {
+	Product* p_product = nullptr;
 	for (auto i = 0; i < product_count; i++) {
 		p_product = static_cast<Product*>(product_list[i]);
 		File << to_string(p_product->get_item_id()) + ";" +
@@ -184,6 +183,7 @@ void InventorySystem::Run(){
 
 	bool Loop = true;
 	while (Loop){
+		cout << endl << endl << endl;
 		cout << "Enter Option" <<endl;
 		cout << "1. Show Inventory" << endl;
 		cout << "2. Puchase Product" <<endl;

@@ -11,8 +11,8 @@
 
 using namespace std;
 
-// Display detail
-const bool g_debug = false;
+// Display Trash Message
+const bool g_debug = true;
 
 class InventoryItem {
 public:

@@ -55,7 +55,7 @@ private:
 	//// read a file bu special text format
 	void ReadFile(ifstream& File);
 	//// write a file by special text format
-	void WriteFile(fstream& File);
+	void WriteFile(ofstream& File);
 
 };
 

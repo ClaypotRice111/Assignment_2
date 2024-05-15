@@ -1,0 +1,26 @@
+901;Panasonic DVD Player;45;128.990000
+3679;iPhone Battery;120;35.990000
+784;Sony Camcorder;125;395.990000
+1231;Samsung TV;0;298.990000
+7734;Apple iPhone 8;1200;599.980000
+4567;HP Laptop;30;899.990000
+3421;Canon DSLR Camera;20;699.990000
+555;Bose Noise Cancelling Headphones;60;299.990000
+9876;Dell Monitor;25;179.990000
+2468;LG Microwave Oven;40;149.990000
+1122;Logitech Wireless Mouse;100;19.990000
+888;Amazon Kindle;80;119.990000
+9999;Nintendo Switch;50;299.990000
+777;Fitbit Charge 4;70;129.950000
+654;Samsung Galaxy Tablet;35;249.990000
+234;Sony PlayStation 5;10;499.990000
+6789;Google Pixel 6;15;799.990000
+111;Microsoft Surface Pro;25;899.990000
+2222;JBL Bluetooth Speaker;90;99.990000
+333;GoPro Hero 9;15;449.990000
+456;Canon Printer;40;199.990000
+567;Sony Noise Cancelling Earbuds;50;199.990000
+987;Garmin GPS Watch;25;349.990000
+876;Roku Streaming Stick;60;49.990000
+789;Bose Soundbar 700;20;799.990000
+543;Xbox Series X;10;499.990000
